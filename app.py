@@ -3,7 +3,7 @@ import yfinance as yf
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 
-st.title("Interactive Apple Stock Prices")
+st.title("Apple Stock Prices")
 
 # Define the ticker symbol for Apple
 ticker_symbol = 'AAPL'
@@ -17,8 +17,8 @@ start_date = end_date - timedelta(days=365)
 
 # Create date input widgets
 st.sidebar.header("Select Date Range")
-start_date = st.sidebar.date_input("Start Date", start_date)
-end_date = st.sidebar.date_input("End Date", end_date)
+start_date = st.sidebar.date_input("From", start_date)
+end_date = st.sidebar.date_input("To", end_date)
 
 # Get the historical prices for Apple stock based on the selected date range
 historical_prices = apple_stock.history(start=start_date, end=end_date)
